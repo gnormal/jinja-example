@@ -1,0 +1,778 @@
+{
+  "Table": {
+    "Name": "Books",
+    "DBName": "books",
+    "Comment": "",
+    "Columns": [
+      {
+        "Name": "ID",
+        "DBName": "id",
+        "Type": "",
+        "DBType": "integer",
+        "IsArray": false,
+        "Length": 0,
+        "UserDefined": false,
+        "Nullable": false,
+        "HasDefault": true,
+        "Comment": "",
+        "IsPrimaryKey": true,
+        "IsFK": false,
+        "HasFKRef": false,
+        "FKColumn": null,
+        "FKColumnRefs": null
+      },
+      {
+        "Name": "AuthorID",
+        "DBName": "author_id",
+        "Type": "",
+        "DBType": "uuid",
+        "IsArray": false,
+        "Length": 0,
+        "UserDefined": false,
+        "Nullable": false,
+        "HasDefault": false,
+        "Comment": "",
+        "IsPrimaryKey": false,
+        "IsFK": true,
+        "HasFKRef": false,
+        "FKColumn": {
+          "DBName": "books_author_id_fkey",
+          "ColumnDBName": "author_id",
+          "RefColumnDBName": "id"
+        },
+        "FKColumnRefs": null
+      },
+      {
+        "Name": "Isbn",
+        "DBName": "isbn",
+        "Type": "",
+        "DBType": "character",
+        "IsArray": false,
+        "Length": 32,
+        "UserDefined": false,
+        "Nullable": false,
+        "HasDefault": false,
+        "Comment": "",
+        "IsPrimaryKey": false,
+        "IsFK": false,
+        "HasFKRef": false,
+        "FKColumn": null,
+        "FKColumnRefs": null
+      },
+      {
+        "Name": "Booktype",
+        "DBName": "booktype",
+        "Type": "",
+        "DBType": "book_type",
+        "IsArray": false,
+        "Length": 0,
+        "UserDefined": true,
+        "Nullable": false,
+        "HasDefault": false,
+        "Comment": "",
+        "IsPrimaryKey": false,
+        "IsFK": false,
+        "HasFKRef": false,
+        "FKColumn": null,
+        "FKColumnRefs": null
+      },
+      {
+        "Name": "Title",
+        "DBName": "title",
+        "Type": "",
+        "DBType": "text",
+        "IsArray": false,
+        "Length": 0,
+        "UserDefined": false,
+        "Nullable": false,
+        "HasDefault": false,
+        "Comment": "",
+        "IsPrimaryKey": false,
+        "IsFK": false,
+        "HasFKRef": false,
+        "FKColumn": null,
+        "FKColumnRefs": null
+      },
+      {
+        "Name": "Pages",
+        "DBName": "pages",
+        "Type": "",
+        "DBType": "integer",
+        "IsArray": false,
+        "Length": 0,
+        "UserDefined": false,
+        "Nullable": false,
+        "HasDefault": false,
+        "Comment": "",
+        "IsPrimaryKey": false,
+        "IsFK": false,
+        "HasFKRef": false,
+        "FKColumn": null,
+        "FKColumnRefs": null
+      },
+      {
+        "Name": "Summary",
+        "DBName": "summary",
+        "Type": "",
+        "DBType": "text",
+        "IsArray": false,
+        "Length": 0,
+        "UserDefined": false,
+        "Nullable": true,
+        "HasDefault": false,
+        "Comment": "",
+        "IsPrimaryKey": false,
+        "IsFK": false,
+        "HasFKRef": false,
+        "FKColumn": null,
+        "FKColumnRefs": null
+      },
+      {
+        "Name": "Available",
+        "DBName": "available",
+        "Type": "",
+        "DBType": "timestamp with time zone",
+        "IsArray": false,
+        "Length": 0,
+        "UserDefined": false,
+        "Nullable": false,
+        "HasDefault": true,
+        "Comment": "",
+        "IsPrimaryKey": false,
+        "IsFK": false,
+        "HasFKRef": false,
+        "FKColumn": null,
+        "FKColumnRefs": null
+      }
+    ],
+    "PrimaryKeys": [
+      {
+        "Name": "ID",
+        "DBName": "id",
+        "Type": "",
+        "DBType": "integer",
+        "IsArray": false,
+        "Length": 0,
+        "UserDefined": false,
+        "Nullable": false,
+        "HasDefault": true,
+        "Comment": "",
+        "IsPrimaryKey": true,
+        "IsFK": false,
+        "HasFKRef": false,
+        "FKColumn": null,
+        "FKColumnRefs": null
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "BooksPkey",
+        "DBName": "books_pkey",
+        "IsUnique": true,
+        "Columns": [
+          {
+            "Name": "ID",
+            "DBName": "id",
+            "Type": "",
+            "DBType": "integer",
+            "IsArray": false,
+            "Length": 0,
+            "UserDefined": false,
+            "Nullable": false,
+            "HasDefault": true,
+            "Comment": "",
+            "IsPrimaryKey": true,
+            "IsFK": false,
+            "HasFKRef": false,
+            "FKColumn": null,
+            "FKColumnRefs": null
+          }
+        ]
+      },
+      {
+        "Name": "BooksIsbnKey",
+        "DBName": "books_isbn_key",
+        "IsUnique": true,
+        "Columns": [
+          {
+            "Name": "Isbn",
+            "DBName": "isbn",
+            "Type": "",
+            "DBType": "character",
+            "IsArray": false,
+            "Length": 32,
+            "UserDefined": false,
+            "Nullable": false,
+            "HasDefault": false,
+            "Comment": "",
+            "IsPrimaryKey": false,
+            "IsFK": false,
+            "HasFKRef": false,
+            "FKColumn": null,
+            "FKColumnRefs": null
+          }
+        ]
+      },
+      {
+        "Name": "BooksTitleIdx",
+        "DBName": "books_title_idx",
+        "IsUnique": false,
+        "Columns": [
+          {
+            "Name": "AuthorID",
+            "DBName": "author_id",
+            "Type": "",
+            "DBType": "uuid",
+            "IsArray": false,
+            "Length": 0,
+            "UserDefined": false,
+            "Nullable": false,
+            "HasDefault": false,
+            "Comment": "",
+            "IsPrimaryKey": false,
+            "IsFK": true,
+            "HasFKRef": false,
+            "FKColumn": {
+              "DBName": "books_author_id_fkey",
+              "ColumnDBName": "author_id",
+              "RefColumnDBName": "id"
+            },
+            "FKColumnRefs": null
+          },
+          {
+            "Name": "Title",
+            "DBName": "title",
+            "Type": "",
+            "DBType": "text",
+            "IsArray": false,
+            "Length": 0,
+            "UserDefined": false,
+            "Nullable": false,
+            "HasDefault": false,
+            "Comment": "",
+            "IsPrimaryKey": false,
+            "IsFK": false,
+            "HasFKRef": false,
+            "FKColumn": null,
+            "FKColumnRefs": null
+          }
+        ]
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "DBName": "books_author_id_fkey",
+        "Name": "BooksAuthorIDFkey",
+        "TableDBName": "books",
+        "RefTableDBName": "authors",
+        "FKColumns": [
+          {
+            "DBName": "books_author_id_fkey",
+            "ColumnDBName": "author_id",
+            "RefColumnDBName": "id"
+          }
+        ]
+      }
+    ],
+    "ForeignKeyRefs": null
+  },
+  "DB": {
+    "Schemas": [
+      {
+        "Name": "Public",
+        "DBName": "public",
+        "Tables": [
+          {
+            "Name": "Authors",
+            "DBName": "authors",
+            "Comment": "",
+            "Columns": [
+              {
+                "Name": "ID",
+                "DBName": "id",
+                "Type": "",
+                "DBType": "uuid",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": true,
+                "Comment": "",
+                "IsPrimaryKey": true,
+                "IsFK": false,
+                "HasFKRef": true,
+                "FKColumn": null,
+                "FKColumnRefs": [
+                  {
+                    "DBName": "books_author_id_fkey",
+                    "ColumnDBName": "author_id",
+                    "RefColumnDBName": "id"
+                  }
+                ]
+              },
+              {
+                "Name": "Name",
+                "DBName": "name",
+                "Type": "",
+                "DBType": "text",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": false,
+                "Comment": "",
+                "IsPrimaryKey": false,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              }
+            ],
+            "PrimaryKeys": [
+              {
+                "Name": "ID",
+                "DBName": "id",
+                "Type": "",
+                "DBType": "uuid",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": true,
+                "Comment": "",
+                "IsPrimaryKey": true,
+                "IsFK": false,
+                "HasFKRef": true,
+                "FKColumn": null,
+                "FKColumnRefs": [
+                  {
+                    "DBName": "books_author_id_fkey",
+                    "ColumnDBName": "author_id",
+                    "RefColumnDBName": "id"
+                  }
+                ]
+              }
+            ],
+            "Indexes": [
+              {
+                "Name": "AuthorsPkey",
+                "DBName": "authors_pkey",
+                "IsUnique": true,
+                "Columns": [
+                  {
+                    "Name": "ID",
+                    "DBName": "id",
+                    "Type": "",
+                    "DBType": "uuid",
+                    "IsArray": false,
+                    "Length": 0,
+                    "UserDefined": false,
+                    "Nullable": false,
+                    "HasDefault": true,
+                    "Comment": "",
+                    "IsPrimaryKey": true,
+                    "IsFK": false,
+                    "HasFKRef": true,
+                    "FKColumn": null,
+                    "FKColumnRefs": [
+                      {
+                        "DBName": "books_author_id_fkey",
+                        "ColumnDBName": "author_id",
+                        "RefColumnDBName": "id"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Name": "AuthorsNameIdx",
+                "DBName": "authors_name_idx",
+                "IsUnique": false,
+                "Columns": [
+                  {
+                    "Name": "Name",
+                    "DBName": "name",
+                    "Type": "",
+                    "DBType": "text",
+                    "IsArray": false,
+                    "Length": 0,
+                    "UserDefined": false,
+                    "Nullable": false,
+                    "HasDefault": false,
+                    "Comment": "",
+                    "IsPrimaryKey": false,
+                    "IsFK": false,
+                    "HasFKRef": false,
+                    "FKColumn": null,
+                    "FKColumnRefs": null
+                  }
+                ]
+              }
+            ],
+            "ForeignKeys": null,
+            "ForeignKeyRefs": [
+              {
+                "DBName": "books_author_id_fkey",
+                "Name": "BooksAuthorIDFkey",
+                "TableDBName": "books",
+                "RefTableDBName": "authors",
+                "FKColumns": [
+                  {
+                    "DBName": "books_author_id_fkey",
+                    "ColumnDBName": "author_id",
+                    "RefColumnDBName": "id"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Name": "Books",
+            "DBName": "books",
+            "Comment": "",
+            "Columns": [
+              {
+                "Name": "ID",
+                "DBName": "id",
+                "Type": "",
+                "DBType": "integer",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": true,
+                "Comment": "",
+                "IsPrimaryKey": true,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              },
+              {
+                "Name": "AuthorID",
+                "DBName": "author_id",
+                "Type": "",
+                "DBType": "uuid",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": false,
+                "Comment": "",
+                "IsPrimaryKey": false,
+                "IsFK": true,
+                "HasFKRef": false,
+                "FKColumn": {
+                  "DBName": "books_author_id_fkey",
+                  "ColumnDBName": "author_id",
+                  "RefColumnDBName": "id"
+                },
+                "FKColumnRefs": null
+              },
+              {
+                "Name": "Isbn",
+                "DBName": "isbn",
+                "Type": "",
+                "DBType": "character",
+                "IsArray": false,
+                "Length": 32,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": false,
+                "Comment": "",
+                "IsPrimaryKey": false,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              },
+              {
+                "Name": "Booktype",
+                "DBName": "booktype",
+                "Type": "",
+                "DBType": "book_type",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": true,
+                "Nullable": false,
+                "HasDefault": false,
+                "Comment": "",
+                "IsPrimaryKey": false,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              },
+              {
+                "Name": "Title",
+                "DBName": "title",
+                "Type": "",
+                "DBType": "text",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": false,
+                "Comment": "",
+                "IsPrimaryKey": false,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              },
+              {
+                "Name": "Pages",
+                "DBName": "pages",
+                "Type": "",
+                "DBType": "integer",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": false,
+                "Comment": "",
+                "IsPrimaryKey": false,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              },
+              {
+                "Name": "Summary",
+                "DBName": "summary",
+                "Type": "",
+                "DBType": "text",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": true,
+                "HasDefault": false,
+                "Comment": "",
+                "IsPrimaryKey": false,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              },
+              {
+                "Name": "Available",
+                "DBName": "available",
+                "Type": "",
+                "DBType": "timestamp with time zone",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": true,
+                "Comment": "",
+                "IsPrimaryKey": false,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              }
+            ],
+            "PrimaryKeys": [
+              {
+                "Name": "ID",
+                "DBName": "id",
+                "Type": "",
+                "DBType": "integer",
+                "IsArray": false,
+                "Length": 0,
+                "UserDefined": false,
+                "Nullable": false,
+                "HasDefault": true,
+                "Comment": "",
+                "IsPrimaryKey": true,
+                "IsFK": false,
+                "HasFKRef": false,
+                "FKColumn": null,
+                "FKColumnRefs": null
+              }
+            ],
+            "Indexes": [
+              {
+                "Name": "BooksPkey",
+                "DBName": "books_pkey",
+                "IsUnique": true,
+                "Columns": [
+                  {
+                    "Name": "ID",
+                    "DBName": "id",
+                    "Type": "",
+                    "DBType": "integer",
+                    "IsArray": false,
+                    "Length": 0,
+                    "UserDefined": false,
+                    "Nullable": false,
+                    "HasDefault": true,
+                    "Comment": "",
+                    "IsPrimaryKey": true,
+                    "IsFK": false,
+                    "HasFKRef": false,
+                    "FKColumn": null,
+                    "FKColumnRefs": null
+                  }
+                ]
+              },
+              {
+                "Name": "BooksIsbnKey",
+                "DBName": "books_isbn_key",
+                "IsUnique": true,
+                "Columns": [
+                  {
+                    "Name": "Isbn",
+                    "DBName": "isbn",
+                    "Type": "",
+                    "DBType": "character",
+                    "IsArray": false,
+                    "Length": 32,
+                    "UserDefined": false,
+                    "Nullable": false,
+                    "HasDefault": false,
+                    "Comment": "",
+                    "IsPrimaryKey": false,
+                    "IsFK": false,
+                    "HasFKRef": false,
+                    "FKColumn": null,
+                    "FKColumnRefs": null
+                  }
+                ]
+              },
+              {
+                "Name": "BooksTitleIdx",
+                "DBName": "books_title_idx",
+                "IsUnique": false,
+                "Columns": [
+                  {
+                    "Name": "AuthorID",
+                    "DBName": "author_id",
+                    "Type": "",
+                    "DBType": "uuid",
+                    "IsArray": false,
+                    "Length": 0,
+                    "UserDefined": false,
+                    "Nullable": false,
+                    "HasDefault": false,
+                    "Comment": "",
+                    "IsPrimaryKey": false,
+                    "IsFK": true,
+                    "HasFKRef": false,
+                    "FKColumn": {
+                      "DBName": "books_author_id_fkey",
+                      "ColumnDBName": "author_id",
+                      "RefColumnDBName": "id"
+                    },
+                    "FKColumnRefs": null
+                  },
+                  {
+                    "Name": "Title",
+                    "DBName": "title",
+                    "Type": "",
+                    "DBType": "text",
+                    "IsArray": false,
+                    "Length": 0,
+                    "UserDefined": false,
+                    "Nullable": false,
+                    "HasDefault": false,
+                    "Comment": "",
+                    "IsPrimaryKey": false,
+                    "IsFK": false,
+                    "HasFKRef": false,
+                    "FKColumn": null,
+                    "FKColumnRefs": null
+                  }
+                ]
+              }
+            ],
+            "ForeignKeys": [
+              {
+                "DBName": "books_author_id_fkey",
+                "Name": "BooksAuthorIDFkey",
+                "TableDBName": "books",
+                "RefTableDBName": "authors",
+                "FKColumns": [
+                  {
+                    "DBName": "books_author_id_fkey",
+                    "ColumnDBName": "author_id",
+                    "RefColumnDBName": "id"
+                  }
+                ]
+              }
+            ],
+            "ForeignKeyRefs": null
+          }
+        ],
+        "Enums": [
+          {
+            "Name": "BookType",
+            "DBName": "book_type",
+            "Values": [
+              {
+                "Name": "Fiction",
+                "DBName": "FICTION",
+                "Value": 1
+              },
+              {
+                "Name": "Nonfiction",
+                "DBName": "NONFICTION",
+                "Value": 2
+              }
+            ]
+          },
+          {
+            "Name": "BookType",
+            "DBName": "book_type",
+            "Values": [
+              {
+                "Name": "Fiction",
+                "DBName": "FICTION",
+                "Value": 1
+              },
+              {
+                "Name": "Nonfiction",
+                "DBName": "NONFICTION",
+                "Value": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Name": "ProductCatalog",
+        "DBName": "product_catalog",
+        "Tables": null,
+        "Enums": null
+      }
+    ]
+  },
+  "Config": {
+    "ConnStr": "dbname=gnorm-db host=127.0.0.1 sslmode=disable user=gnorm-user",
+    "DBType": "postgres",
+    "Schemas": [
+      "public",
+      "product_catalog"
+    ],
+    "IncludeTables": {
+      "product_catalog": null,
+      "public": null
+    },
+    "ExcludeTables": {
+      "product_catalog": [
+        "schema_version"
+      ],
+      "public": [
+        "schema_version"
+      ]
+    },
+    "PostRun": null,
+    "TypeMap": {},
+    "NullableTypeMap": {},
+    "PluginDirs": null,
+    "OutputDir": "./generated",
+    "StaticDir": "",
+    "NoOverwriteGlobs": null
+  },
+  "Params": {}
+}

@@ -1,0 +1,17 @@
+Table converted name: Books  
+Table original DB name: books  
+
+Columns:
+id -> integer
+author_id -> uuid
+isbn -> character
+booktype -> book_type
+title -> text
+pages -> integer
+summary -> text
+available -> timestamp with time zone
+
+Foreign Keys:
+Name: books_author_id_fkey
+  Table: authors
+  Columns: id 

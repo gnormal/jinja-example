@@ -3,5 +3,14 @@ Table original DB name: {{Table.DBName}}
 
 Columns:
 {% for col in Table.Columns %}
-{{col.Name}} -> {{col.DBName}}
+{{col.DBName}} -> {{col.DBType}}
 {% endfor %}
+
+{% if Table.ForeignKeys %}
+Foreign Keys:
+{% for key in Table.ForeignKeys %}
+Name: {{key.DBName}}
+  Table: {{key.RefTableDBName}}
+  Columns: {% for col in key.FKColumns %}{{col.RefColumnDBName}} {% endfor %}
+{% endfor %}
+{% endif %}
