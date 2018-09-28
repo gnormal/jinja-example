@@ -1,0 +1,7 @@
+Table converted name: {{Table.Name}}  
+Table converted orignial name: {{Table.DBName}}  
+
+Columns:
+{% for col in Table.Columns %}
+{{col.Name}} -> {{col.DBName}}
+{% endfor %}

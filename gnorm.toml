@@ -1,0 +1,50 @@
+# !!!! YOU NEED TO CHANGE THIS !!!!
+# This is the connection string for your database
+ConnStr = "dbname=$MCPPD_STORAGE_NAME sslmode=$MCPPD_STORAGE_SSLMODE user=$MCPPD_STORAGE_USER password=$MCPPD_STORAGE_PASSWORD"
+
+DBType = "postgres"
+
+Schemas = ["public","product_catalog"]
+
+# PostRun = []
+
+NameConversion = "{{snake .}}"
+
+# This will output the files in a subdirectory called "gnorm".  You can change
+# this, but if you do, change the RootPkg definition below to match what the
+# package name should be.
+OutputDir = "./gnorm"
+
+ExcludeTables = ["schema_version"]
+
+# PluginDirs = []
+
+# TemplateEngine, if specified, describes a command line tool to run to
+# render your templates, allowing you to use your preferred templating
+# engine.  If not specified, go's text/template will be used to render.
+[TemplateEngine]
+    # CommandLine is the command to run to render the template.  You may
+    # pass the following variables to the command line - 
+    # {{.Data}} the name of a .json file containing the gnorm data serialized into json
+    # {{.Template}} - the name of the template file being rendered
+    # {{.Output}} the target file where output should be written 
+    CommandLine = ["yasha", "-v", "{{.Data}}", "{{.Template}}", "-o", "{{.Output}}"]
+
+    # If true, the json data will be sent via stdin to the rendering tool.
+    UseStdin = false
+
+    # If true, the standard output of the tool will be written to the target file.
+	UseStdout = false
+
+[Params]
+
+[SchemaPaths]
+
+[TablePaths]
+"{{toLower .Schema}}/{{toLower .Table}}/{{toLower .Table}}.html" = "tables.j2"
+
+[EnumPaths]
+
+[TypeMap]
+
+[NullableTypeMap]
