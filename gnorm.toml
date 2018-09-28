@@ -1,6 +1,6 @@
 # !!!! YOU NEED TO CHANGE THIS !!!!
 # This is the connection string for your database
-ConnStr = "dbname=$MCPPD_STORAGE_NAME sslmode=$MCPPD_STORAGE_SSLMODE user=$MCPPD_STORAGE_USER password=$MCPPD_STORAGE_PASSWORD"
+ConnStr = "dbname=gnorm-db host=127.0.0.1 sslmode=disable user=gnorm-user"
 
 DBType = "postgres"
 
@@ -8,7 +8,7 @@ Schemas = ["public","product_catalog"]
 
 # PostRun = []
 
-NameConversion = "{{snake .}}"
+NameConversion = "{{pascal .}}"
 
 # This will output the files in a subdirectory called "gnorm".  You can change
 # this, but if you do, change the RootPkg definition below to match what the
